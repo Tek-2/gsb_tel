@@ -16,7 +16,6 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="115dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Inscription"
         android:textColor="#0D3C0D"
         android:textSize="40dp" />
@@ -26,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Nom"
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -44,7 +42,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Prenom"
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -61,7 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="E-mail"
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -79,7 +75,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Mot de passe"
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -96,7 +91,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="code du visiteur"
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -120,7 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:fontFamily="@font/quicksand_medium"
             android:text="Vous avez deja un compte? "
             android:textColor="#243103"
             android:textSize="15dp" />
@@ -130,7 +123,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#E5FCB6"
-            android:fontFamily="@font/quicksand_medium"
             android:text="Mot de passe oublié?"
             android:textColor="#233023" />
 
@@ -141,7 +133,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="j'accepte les conditions d'utilisation et la politique de confidentialité."
         android:textColor="#243103"
         android:textSize="15dp" />
@@ -152,7 +143,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#B5E180"
-        android:fontFamily="@font/quicksand_medium"
         android:text="S'inscrire"
         android:textColor="#233023"
         app:cornerRadius="5dp" />

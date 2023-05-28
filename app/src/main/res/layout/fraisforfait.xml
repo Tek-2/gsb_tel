@@ -10,7 +10,6 @@
     <include layout="@layout/entete"/>
 
     <TextView
-        android:labelFor="@+id/TV_FraisAuForfait"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
@@ -26,7 +25,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:labelFor="@+id/TV_Typedeforfait"
+            android:labelFor="@+id/TypedeForfait_FAF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"
@@ -53,7 +52,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:labelFor="@+id/TV_Quantité"
+            android:labelFor="@+id/Quantite_FAF"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"
@@ -80,7 +79,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:labelFor="@+id/TV_DatedesFrais"
+            android:labelFor="@+id/txtDateFrais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"

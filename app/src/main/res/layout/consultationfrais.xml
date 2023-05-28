@@ -15,7 +15,11 @@
         android:layout_marginTop="20dp"
         android:text="Consultation Frais"
         android:textColor="#0D3C0D"
-        android:textSize="40dp" />
+        android:textSize="40dp" 
+        android:gravity="center_horizontal"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></Space>
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -23,11 +27,14 @@
         android:text="Filtre"
         android:textSize="20sp" />
 
-    <EditText android:id="@+id/myFilter"
+    <EditText
+        android:id="@+id/myFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="filtre">
+        android:hint="filtre"
+        tools:ignore="TouchTargetSizeCheck">
+
         <requestFocus />
     </EditText>
 

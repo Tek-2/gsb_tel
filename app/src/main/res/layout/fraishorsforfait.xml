@@ -15,7 +15,6 @@
         android:layout_gravity="center"
         android:layout_marginHorizontal="150dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/quicksand_medium"
         android:text="Frais Hors Forfait"
         android:textColor="#0D3C0D"
         android:textSize="40dp" />
@@ -31,21 +30,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"
-            android:fontFamily="@font/quicksand_medium"
             android:text="Libellé :"
             android:textColor="#233023"
             android:textSize="20dp" />
-
 
 
         <EditText
             android:id="@+id/libelle_FHF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:background="#E9FDB7"
             android:hint="Saisir votre montant"
-            android:textColor="#CCEA7D" />
+            android:padding="4dp"
+            android:textColor="#CCEA7D"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
     <LinearLayout
@@ -59,7 +57,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"
-            android:fontFamily="@font/quicksand_medium"
             android:text="Montant :"
             android:textColor="#233023"
             android:textSize="20dp" />
@@ -68,10 +65,11 @@
             android:id="@+id/Montant_FHF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
             android:background="#E9FDB7"
             android:hint="Saisir votre montant"
-            android:textColor="#CCEA7D" />
+            android:padding="4dp"
+            android:textColor="#CCEA7D"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
     <LinearLayout
@@ -85,7 +83,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="9dp"
-            android:fontFamily="@font/quicksand_medium"
             android:text="Date :"
             android:textColor="#233023"
             android:textSize="20dp" />
@@ -106,6 +103,7 @@
             android:baselineAlignBottom="false"
             android:longClickable="false"
             android:onClick="ShowCal"
+            android:contentDescription="affiche cal"
             android:scaleType="centerInside"
             app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 

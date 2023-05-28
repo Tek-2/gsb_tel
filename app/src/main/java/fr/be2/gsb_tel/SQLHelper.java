@@ -198,7 +198,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     public Cursor fetchAllFrais() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
-                        MONTANT, DATE_SAISIE ,LIBELLE,ID_FRAIS},
+                        MONTANT, DATE_SAISIE ,LIBELLE,ID_FRAIS,QUANTITE},
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -209,7 +209,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     public Cursor fetchFrais(String filtre) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
-                        MONTANT, DATE_SAISIE ,LIBELLE},
+                        MONTANT, DATE_SAISIE ,LIBELLE,QUANTITE},
                 filtre, null, null, null, null);
 
         if (mCursor != null) {

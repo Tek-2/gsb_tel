@@ -39,7 +39,8 @@ public class consultationFrais extends menu {
                 SQLHelper.DATE_FRAIS,
                 SQLHelper.MONTANT,
                 SQLHelper.DATE_SAISIE,
-                SQLHelper.LIBELLE,
+                SQLHelper.QUANTITE,
+                SQLHelper.LIBELLE
         };
 
         // Les éléments defnis dans le XML auxquels les données sont liées
@@ -47,6 +48,7 @@ public class consultationFrais extends menu {
                 R.id.idFrais,
                 R.id.dateFrais,
                 R.id.montant,
+                R.id.dateActu,
                 R.id.txtQte,
                 R.id.libelleFrais,
         };

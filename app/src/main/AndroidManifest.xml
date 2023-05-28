@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:theme="@style/Base.Theme.gsb_tel"
         tools:targetApi="31">
         <activity
             android:name=".parametres"
@@ -28,7 +29,13 @@
             android:exported="false" />
         <activity
             android:name=".menu"
-            android:exported="false" />
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+
+        </intent-filter>
+        </activity>
         <activity
             android:name=".Frais"
             android:exported="false" />
@@ -37,29 +44,8 @@
             android:exported="false" />
 
         <activity
-            android:name="fr.be2.gsb_tel.historiqueenvois"
+            android:name=".Connexion"
             android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_tel.parametres"
-            android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_tel.fraishorsforfait"
-            android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_tel.Connexion"
-            android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_tel.fraisforfait"
-            android:exported="false" />
-        <activity
-            android:name="fr.be2.gsb_tel.menu"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

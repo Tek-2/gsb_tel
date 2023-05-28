@@ -28,7 +28,6 @@ public class fraisforfait extends menu {
     int jj=calendrier.get(Calendar.DAY_OF_MONTH);
     int mm=calendrier.get(Calendar.MONTH);
     int aaaa=calendrier.get(Calendar.YEAR);
-    public static final int numero=R.id.ajouterff;
 
 
     @Override
@@ -75,10 +74,10 @@ public class fraisforfait extends menu {
                 },aaaa, mm, jj);//date qui s'affiche sur le calendrier
         picker.show();
     }
+
     public void Monclick(View v){
 
-        switch (v.getId()){
-            case numero:
+        if (v.getId()==R.id.ajouterff) {
                 if (txtQte1.getText().toString().trim().length() == 0 || listeForfait1.getSelectedItem().toString().length() == 0
                         || maDate.getText().toString().trim().length() == 0) {
                     //teste si le champ quantite est renseigné ou si le champ type n'est pas vide
@@ -103,7 +102,7 @@ public class fraisforfait extends menu {
                         return;
                     }
                 }
-                break;
+
         }
     }
 

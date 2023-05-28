@@ -63,8 +63,7 @@ public class fraishorsforfait extends menu {
      * @param view
      */
     public void MyClick(View view){
-        switch (view.getId()){
-            case R.id.main_button_10:
+        if (view.getId() == R.id.main_button_10) {
                 String libelle1= libelle.getText().toString();
                 double montant1 = Double.parseDouble(montant.getText().toString());//conversion d'un text
                 // en string et d'un string en double
