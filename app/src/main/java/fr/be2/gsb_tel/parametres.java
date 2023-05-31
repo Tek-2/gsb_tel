@@ -33,13 +33,13 @@ public class parametres extends menu {
 
         //Param.getInt(Param.getColumnIndex("CODEV1"));
         CodeV1= findViewById(R.id.CODEV);
-        CodeV1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("CODEVisiteur",""));
+        CodeV1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("CodeVisiteur",""));
 
         Nom1=findViewById(R.id.NOM);
-        Nom1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("NOM",""));
+        Nom1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("Nom",""));
 
         Prenom1=findViewById(R.id.PRENOM);
-        Prenom1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("PrenOM",""));
+        Prenom1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("Prenom",""));
 
         Email1=findViewById(R.id.EMAIL);
         Email1.setText(getSharedPreferences(monFichier, MODE_PRIVATE).getString("email",""));
