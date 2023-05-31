@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class menu extends AppCompatActivity {
     Intent intent;
@@ -23,6 +24,7 @@ public class menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+        afficherUser();
         secure();
     }
 
@@ -73,5 +75,11 @@ int id = v.getId();
 
     }
 
+    public void afficherUser(){
+        TextView bienvenue = findViewById(R.id.bienvenue);
+        String nomUser = getSharedPreferences(monFichier, MODE_PRIVATE).getString("Nom", "");
+        nomUser += " " + getSharedPreferences(monFichier, MODE_PRIVATE).getString("Prenom", "");
+        bienvenue.setText(nomUser);
+    }
 }
 

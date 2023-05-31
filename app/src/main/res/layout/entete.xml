@@ -4,23 +4,56 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp"></Space>
 
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#218F03"
+        android:backgroundTint="#1eb300"
         android:text="retour"
-        android:onClick="fermer" />
-    <Space
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"></Space>
+        android:onClick="fermer"
+        app:cornerRadius="10dp"/>
+
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="142dp"
         android:gravity="center"
         app:srcCompat="@drawable/logo" />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/bnvn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenue"
+        android:textSize="30dp"
+        android:layout_margin="10dp" ></TextView>
+
+    <TextView
+        android:id="@+id/bienvenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="utilisateur"
+        android:textSize="30dp"
+        android:layout_margin="10dp" ></TextView>
+
+</LinearLayout>
+
 
 
 

@@ -52,6 +52,10 @@ public class SQLHelper extends SQLiteOpenHelper {
      * constructeur de la classe
      * methode venant de SQLLite et permettant d'executer une requete SQL
      *
+     * Méthode onCreate : Cette méthode est appelée lorsque la base de données est créée pour la
+     * première fois.
+     * Elle crée les tables "FRAIS" et "PARAMETRES" en exécutant les requêtes SQL correspondantes.
+     *
      * @param sqLiteDatabase
      */
     @Override
@@ -66,6 +70,10 @@ public class SQLHelper extends SQLiteOpenHelper {
     /**
      * destructeur de la classe
      *
+     * Méthode onUpgrade : Cette méthode est appelée lorsque la base de données doit être mise à jour
+     * en raison d'un changement de version. Dans ce cas, la méthode supprime les tables existantes et
+     * les recrée en appelant la méthode onCreate.
+     *
      * @param sqLiteDatabase
      * @param i
      * @param i1
@@ -78,6 +86,13 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     /**
      * Insère dans le BDD les données type, quantité, date, montant et libellé renseignées par le visiteur
+     *
+     * Méthode insertData : Cette méthode est utilisée pour insérer des données dans la table "FRAIS".
+     * Elle prend en paramètre les valeurs à insérer (typeForfait, quantite, dateForfait, montant, libelle)
+     * et les ajoute dans un objet ContentValues.
+     * Ensuite, la méthode insert est appelée sur l'objet SQLiteDatabase pour effectuer l'insertion
+     * des données dans la table.
+     *
      * @param typeForfait
      * @param quantite
      * @param dateForfait
@@ -104,6 +119,12 @@ public class SQLHelper extends SQLiteOpenHelper {
         return result != -1;
 
     }
+
+    /**
+     * Méthode init_PARAMETRES : Cette méthode est utilisée pour initialiser la table "PARAMETRES" avec
+     * des valeurs par défaut. Elle insère une seule ligne avec des valeurs vides pour les colonnes
+     * "codev", "nom", "prenom", "email", "urlserveur" et la valeur "1" pour la colonne "password".
+     */
     public boolean init_PARAMETRES() {
         //on cree une variable de type sqLitedatabase pr pouvoir y acceder
         SQLiteDatabase db = this.getWritableDatabase();
@@ -150,6 +171,21 @@ public class SQLHelper extends SQLiteOpenHelper {
         }
         return new String( hexChars );
     }
+
+    /**
+     * Méthode update_parametre : Cette méthode est utilisée pour mettre à jour les valeurs de la
+     * table "PARAMETRES". Elle prend en paramètre les nouvelles valeurs (Codev, Nom, Prenom, Mail,
+     * Urlserveur, Password) et les met à jour dans l'objet ContentValues. La méthode update est
+     * ensuite appelée sur l'objet SQLiteDatabase pour effectuer la mise à jour des données.
+     *
+     * @param Codev
+     * @param Nom
+     * @param Prenom
+     * @param Mail
+     * @param Urlserveur
+     * @param Password
+     * @return
+     */
     public boolean update_parametre(Integer Codev , String Nom , String Prenom, String Mail , String Urlserveur,String Password) {
         //on cree une variable de type sqLitedatabase pr pouvoir y acceder
         SQLiteDatabase db = this.getWritableDatabase();

@@ -19,16 +19,40 @@ public class consultationFrais extends menu {
     private SQLHelper database;
     private SimpleCursorAdapter dataAdapter;
 
+    /**
+     * Méthode onCreate : Cette méthode est appelée lorsque l'activité est créée. Elle configure le
+     * layout de l'activité en utilisant le fichier XML "consultationfrais.xml". Elle initialise la
+     *base de données SQLHelper et ouvre la connexion avec la base de données. Ensuite, elle appelle
+     *la méthode "displayListView" pour générer le ListView à partir des données de la base de données.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.consultationfrais);
+        afficherUser();
         database = new SQLHelper(this);
         database.open();
         //Générer le ListView a partir de SQLite Database
         displayListView();
 
     }
+
+    /**
+     * Méthode displayListView : Cette méthode est responsable de l'affichage des données de frais
+     * dans le ListView. Elle récupère un curseur (Cursor) contenant les données de frais à partir
+     * de la base de données. Elle spécifie les colonnes de la base de données que l'on souhaite lier
+     * à des éléments spécifiques dans le fichier XML. Ensuite, elle crée un SimpleCursorAdapter en
+     * utilisant le curseur, les colonnes et les éléments spécifiques du XML pour définir l'adaptateur.
+     * Elle associe l'adaptateur au ListView et configure un écouteur d'événements sur le ListView
+     * pour gérer les clics sur les éléments de la liste. Lorsqu'un élément est cliqué, elle récupère
+     * l'ID du frais correspondant, l'affiche dans un toast et supprime les données de frais correspondantes
+     * de la base de données.
+     */
     private void displayListView() {
 
         Cursor cursor = database.fetchAllFrais();
@@ -78,6 +102,13 @@ public class consultationFrais extends menu {
             }
         });
 
+        /**
+         * Méthode addTextChangedListener : Cette méthode configure un TextWatcher pour le champ de
+         * texte (EditText) "myFilter". Le TextWatcher est utilisé pour écouter les modifications
+         * du texte dans le champ de texte et filtrer les données affichées dans le ListView en
+         * fonction du texte saisi.
+         *
+         */
 
         // Attribuer l’adapter au ListView
         listView.setAdapter(dataAdapter);
@@ -98,6 +129,12 @@ public class consultationFrais extends menu {
             }
         });
 
+        /**
+         * Méthode runQuery : Cette méthode est utilisée pour exécuter une requête de filtrage sur
+         * la base de données en fonction du texte de contrainte spécifié. Elle renvoie un curseur
+         * (Cursor) contenant les données filtrées.
+         *
+         */
         dataAdapter.setFilterQueryProvider(new FilterQueryProvider() {
             public Cursor runQuery(CharSequence constraint) {
                 return database.fetchFrais(constraint.toString());

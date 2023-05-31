@@ -16,9 +16,6 @@
             android:name=".parametres"
             android:exported="false" />
         <activity
-            android:name=".inscriptions"
-            android:exported="false" />
-        <activity
             android:name=".historiqueenvois"
             android:exported="false" />
         <activity

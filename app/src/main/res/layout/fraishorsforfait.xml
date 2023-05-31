@@ -7,18 +7,31 @@
     android:orientation="vertical"
     tools:context=".fraishorsforfait">
 
-    <include layout="@layout/entete"/>
-    <TextView
-        android:labelFor="@+id/TV_FraisHorsForfait"
-        android:layout_width="350dp"
-        android:layout_height="70dp"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="150dp"
-        android:layout_marginTop="20dp"
-        android:text="Frais Hors Forfait"
-        android:textColor="#0D3C0D"
-        android:textSize="40dp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
 
+    <TextView
+        android:labelFor="@+id/TV_connexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Frais Hors Forfait"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="#0D3C0D"
+        android:textSize="50dp"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <include layout="@layout/entete"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></Space>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,15 +50,18 @@
 
         <EditText
             android:id="@+id/libelle_FHF"
-            android:layout_width="match_parent"
+            android:layout_width="500dp"
             android:layout_height="wrap_content"
             android:background="#E9FDB7"
-            android:hint="Saisir votre montant"
-            android:padding="4dp"
+            android:hint="Saisir le libellé du forfait"
+            android:padding="10dp"
             android:textColor="#CCEA7D"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
+    <Space
+    android:layout_width="10dp"
+    android:layout_height="10dp"></Space>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,17 +77,22 @@
             android:textColor="#233023"
             android:textSize="20dp" />
 
+
         <EditText
             android:id="@+id/Montant_FHF"
-            android:layout_width="match_parent"
+            android:layout_width="481dp"
             android:layout_height="wrap_content"
             android:background="#E9FDB7"
             android:hint="Saisir votre montant"
-            android:padding="4dp"
+            android:padding="10dp"
             android:textColor="#CCEA7D"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp"></Space>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,49 +107,48 @@
             android:text="Date :"
             android:textColor="#233023"
             android:textSize="20dp" />
+
         <TextView
             android:id="@+id/txtdatefrais"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:padding="30dp"
+            android:padding="10dp"
             android:background="#E9FDB7"
             android:text=""/>
 
 
-
         <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ED80AFD6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:baselineAlignBottom="false"
             android:longClickable="false"
             android:onClick="ShowCal"
-            android:contentDescription="affiche cal"
             android:scaleType="centerInside"
             app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
-
     </LinearLayout>
 
-
+<Space
+    android:layout_width="20dp"
+    android:layout_height="20dp"></Space>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
+        android:layout_gravity="center"
         tools:context="fraishorsforfait">
         <Button
             android:id="@+id/main_button_10"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:layout_margin="3dp"
-            android:backgroundTint="#B5E180"
+            android:backgroundTint="#1eb300"
             android:text="Ajouter"
             android:textColor="#233023"
-            android:onClick="MyClick"
-            app:cornerRadius="30dp" />
+            app:cornerRadius="5dp"
+            android:layout_margin="3dp"
+            android:onClick="MyClick" />
 
 
     </LinearLayout>

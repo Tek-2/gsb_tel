@@ -21,10 +21,24 @@ import static java.lang.Integer.parseInt;
 public class historiqueenvois extends menu {
     private SimpleCursorAdapter dataAdapter;
     private SQLHelper db;
+
+    /**
+     * Méthode onCreate : Cette méthode est appelée lorsque l'activité est créée. Dans cette
+     * méthode, le contenu de l'interface utilisateur est défini en utilisant la méthode
+     * setContentView. Ensuite, la variable "db" est initialisée en créant une instance de la
+     * classe SQLHelper. La méthode "displayListView()" est appelée pour afficher les données
+     * dans le ListView.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.historiqueenvois);
+        afficherUser();
         //j'instancie la classe SQLHelper avec la variable db
         db = new SQLHelper(this);
         db.open();
@@ -33,6 +47,8 @@ public class historiqueenvois extends menu {
     }
 
     /**
+     * Méthode displayListView : Cette méthode est utilisée pour afficher les données dans le ListView. Elle récupère un curseur contenant les données à afficher à partir de la méthode "fetchAllFrais()" de l'objet "db". Ensuite, elle définit les colonnes du curseur à afficher ("LIBELLE", "MONTANT", "DATE_FRAIS", "DATE_SAISIE", "QUANTITE", "ID_FRAIS") et les éléments de l'interface utilisateur correspondants dans le fichier XML ("libelleFrais", "montant", "dateFrais", "dateActu", "txtQte", "idFrais").
+     *
      * Permet de remplir le list view des frais
      */
     private void displayListView() {
@@ -70,6 +86,11 @@ public class historiqueenvois extends menu {
                 0);
 
         ListView listView = (ListView) findViewById(R.id.listView1);
+        /**
+         * Configuration de l'adaptateur : L'adaptateur "dataAdapter" est créé en utilisant le
+         * curseur, les colonnes et les éléments de l'interface utilisateur. Cet adaptateur est
+         * ensuite assigné au ListView à l'aide de la méthode "setAdapter".
+         */
         // Attribuer l’adapter au ListView
         listView.setAdapter(dataAdapter);
 
@@ -87,10 +108,4 @@ public class historiqueenvois extends menu {
                 db.deleteData (parseInt (myId));
             }
         });
-    }
-
-    public void clique_retour(View view) {
-        finish();
-    }
-
-}
+    }}

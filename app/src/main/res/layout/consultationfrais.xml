@@ -8,18 +8,30 @@
     android:orientation="vertical"
     tools:context=".consultationFrais">
 
-    <include layout="@layout/entete"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Consultation Frais"
-        android:textColor="#0D3C0D"
-        android:textSize="40dp" 
-        android:gravity="center_horizontal"/>
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp"></Space>
+        android:layout_height="20dp"></Space>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:text="Consultation Frais"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="#0D3C0D"
+        android:textSize="50dp"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></Space>
+
+    <include layout="@layout/entete"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></Space>
 
     <TextView android:layout_width="fill_parent"
         android:layout_height="wrap_content"

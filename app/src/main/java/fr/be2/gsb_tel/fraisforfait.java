@@ -29,11 +29,22 @@ public class fraisforfait extends menu {
     int mm=calendrier.get(Calendar.MONTH);
     int aaaa=calendrier.get(Calendar.YEAR);
 
-
+    /**
+     * Méthode onCreate : Cette méthode est appelée lorsque l'activité est créée. Dans cette
+     * méthode, le contenu de l'interface utilisateur est défini en utilisant la méthode
+     * setContentView. De plus, certaines variables sont initialisées et des écouteurs
+     * d'événements sont définis pour certains éléments de l'interface utilisateur.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fraisforfait);
+        afficherUser();
         txtQte1=findViewById(R.id.Quantite_FAF);
         listeForfait1=findViewById(R.id.TypedeForfait_FAF);
         valeurs=getResources().getStringArray(R.array.ValeurForfait);
@@ -62,6 +73,13 @@ public class fraisforfait extends menu {
         });
     }
 
+    /**
+     * Méthode ShowCal : Cette méthode est appelée lorsqu'un bouton est cliqué pour afficher un
+     * DatePickerDialog, permettant à l'utilisateur de sélectionner une date. Une fois la date
+     * sélectionnée, elle est affichée dans un TextView.
+     *
+     * @param vv
+     */
     public void ShowCal(View vv)
     {
         picker = new DatePickerDialog(fraisforfait.this,
@@ -75,6 +93,14 @@ public class fraisforfait extends menu {
         picker.show();
     }
 
+    /**
+     * Méthode Monclick : Cette méthode est appelée lorsqu'un bouton est cliqué, en particulier le
+     * bouton "ajouterff". Dans cette méthode, plusieurs vérifications sont effectuées pour valider
+     * les données saisies par l'utilisateur. Si toutes les validations sont réussies, les données
+     * sont insérées dans la base de données à l'aide de la méthode insertData de l'objet database.
+     *
+     * @param v
+     */
     public void Monclick(View v){
 
         if (v.getId()==R.id.ajouterff) {
@@ -98,7 +124,7 @@ public class fraisforfait extends menu {
                     int posForfait = listeForfait1.getSelectedItemPosition();
                     montantCalcule= quantite * Float.parseFloat(valeurs[posForfait]);
                     if (database.insertData(forfait, quantite, dateForfait, montantCalcule, forfait)) {
-                        afficherMessage("Succès", "Valeur ajoutée. " + "Montant= " + montantCalcule +"€");
+                        afficherMessage("Succès !", "Valeur ajoutée, " + "montant = " + montantCalcule +"€");
                         return;
                     }
                 }

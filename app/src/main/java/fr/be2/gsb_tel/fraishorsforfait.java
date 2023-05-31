@@ -23,10 +23,24 @@ public class fraishorsforfait extends menu {
     int jj=calendrier.get(Calendar.DAY_OF_MONTH);
     int mm=calendrier.get(Calendar.MONTH);
     int aaaa=calendrier.get(Calendar.YEAR);
+
+    /**
+     * Méthode onCreate : Cette méthode est appelée lorsque l'activité est créée. Dans cette
+     * méthode, le contenu de l'interface utilisateur est défini en utilisant la méthode
+     * setContentView. De plus, la variable database est initialisée en créant une instance
+     * de la classe SQLHelper. La méthode init() est appelée pour relier les boutons aux objets
+     * graphiques correspondants.
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fraishorsforfait);
+        afficherUser();
         database=new SQLHelper(this); //j'instancie la classe SQLHelper avec la variable database
         init();
     }
@@ -59,33 +73,29 @@ public class fraishorsforfait extends menu {
     }
 
     /**
+     * Méthode MyClick : Cette méthode est appelée lorsqu'un bouton est cliqué, en particulier le
+     * bouton "btnAjouter". Dans cette méthode, plusieurs vérifications sont effectuées pour valider
+     * les données saisies par l'utilisateur. Si toutes les validations sont réussies, les données
+     * sont insérées dans la base de données à l'aide de la méthode insertData de la bdd
+     *
      * Ajoute le libelle, la date et le montant d'un frais hors forfait
      * @param view
      */
-    public void MyClick(View view){
+    public void MyClick(View view) {
         if (view.getId() == R.id.main_button_10) {
-                String libelle1= libelle.getText().toString();
-                double montant1 = Double.parseDouble(montant.getText().toString());//conversion d'un text
-                // en string et d'un string en double
-                String date1=date.getText().toString();
-                if(libelle1.trim().length()==0 || montant1==0 || date1.length()==0) { //test si les champs
-                    // libelle, montant et date sont renseignes
-                    afficherMessage("Erreur!", "Champs vides.");
-                    return;
-                } else{
-                    database.insertData("Hors Forfait", null, date1, montant1, libelle1);
-                    afficherMessage("Succès!", "Informations ajoutées.");
-                    return;
-                }
+            String libelle1 = libelle.getText().toString();
+            double montant1 = Double.parseDouble(montant.getText().toString());//conversion d'un text
+            // en string et d'un string en double
+            String date1 = date.getText().toString();
+            if (libelle1.trim().length() == 0 || montant1 == 0 || date1.length() == 0) { //test si les champs
+                // libelle, montant et date sont renseignes
+                afficherMessage("Erreur !", "Champs vides.");
+                return;
+            } else {
+                database.insertData("Hors Forfait", null, date1, montant1, libelle1);
+                afficherMessage("Succès !", "Informations ajoutées.");
+                return;
+            }
         }
     }
-
-    /**
-     * Permet le retour à la page précédente
-     * @param view
-     */
-    public void clique_retour(View view) {
-        finish();
     }
-
-}
